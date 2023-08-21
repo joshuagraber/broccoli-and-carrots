@@ -1,0 +1,48 @@
+{
+  "name": "broccoli-and-carrots",
+  "version": "0.0.0",
+  "description": "Data structures and algorithms in TypeScript",
+  "main": "lib/index.js",
+  "license": "ISC",
+  "author": "Joshua D. Graber",
+  "scripts": {
+    "build": "tsc -p .",
+    "commit": "npx git-cz",
+    "lint-staged": "lint-staged",
+    "semantic-release": "semantic-release",
+    "test": "jest --config jest.config.js --maxWorkers=1",
+    "test:ci": "test --watchAll=false"
+  },
+  "prepublish": "tsc",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^29.5.3",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3",
+    "jest": "^29.6.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.2",
+    "semantic-release": "^21.0.9",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test",
+      "pre-push": "lint-staged && npm run test"
+    }
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "eslint"
+    ]
+  }
+}
