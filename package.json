@@ -8,7 +8,7 @@
   "author": "Joshua D. Graber <joshua.d.graber@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/joshuagraber/broccoli-and-carrots.git"
+    "url": "https://github.com/joshuagraber/broccoli-and-carrots.git"
   },
   "scripts": {
     "build": "tsc -p .",
