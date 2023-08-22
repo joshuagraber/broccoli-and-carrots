@@ -3,8 +3,13 @@
   "version": "0.0.0",
   "description": "Data structures and algorithms in TypeScript",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "ISC",
-  "author": "Joshua D. Graber",
+  "author": "Joshua D. Graber <joshua.d.graber@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joshuagraber/broccoli-and-carrots.git"
+  },
   "scripts": {
     "build": "tsc -p .",
     "commit": "npx git-cz",
