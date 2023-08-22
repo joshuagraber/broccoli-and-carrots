@@ -2,12 +2,18 @@
   "name": "broccoli-and-carrots",
   "version": "0.0.0",
   "description": "Data structures and algorithms in TypeScript",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "ISC",
-  "author": "Joshua D. Graber",
+  "author": "Joshua D. Graber <joshua.d.graber@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joshuagraber/broccoli-and-carrots.git"
+  },
   "scripts": {
     "build": "tsc -p .",
     "commit": "npx git-cz",
+    "lint": "eslint",
     "lint-staged": "lint-staged",
     "semantic-release": "semantic-release",
     "test": "jest --config jest.config.js --maxWorkers=1",
