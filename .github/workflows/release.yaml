@@ -3,8 +3,7 @@ name: Release
 on:
   push:
     branches:
-      # Using feature branch for testing to avoid polluting main with a bunch of commits
-      - feature/create-release-action
+      - master
 
 jobs:
   setup:
