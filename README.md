@@ -1,3 +1,4 @@
-# Broccoli and Carrots: Data Structures and Algorithms in Typescript
+# Broccoli and Carrots
+_Data Structures and Algorithms in Typescript_
 
 TODO: Make README nice.
