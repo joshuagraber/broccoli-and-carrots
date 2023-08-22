@@ -2,7 +2,7 @@
   "name": "broccoli-and-carrots",
   "version": "0.0.0",
   "description": "Data structures and algorithms in TypeScript",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "license": "ISC",
   "author": "Joshua D. Graber",
   "scripts": {
