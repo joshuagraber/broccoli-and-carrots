@@ -8,6 +8,7 @@
   "scripts": {
     "build": "tsc -p .",
     "commit": "npx git-cz",
+    "lint": "eslint",
     "lint-staged": "lint-staged",
     "semantic-release": "semantic-release",
     "test": "jest --config jest.config.js --maxWorkers=1",
