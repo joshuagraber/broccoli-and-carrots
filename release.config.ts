@@ -1,6 +1,6 @@
 module.exports = {
   branches: [
-    'main',
+    'master',
     {
       name: 'feature/create-release-action',
       prerelease: true,
