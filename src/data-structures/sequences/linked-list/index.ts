@@ -336,5 +336,5 @@ class LinkedList<T> implements Iterable<T> {
   }
 }
 
-export default LinkedList;
-export type { List };
+// export default LinkedList;
+export { LinkedList, type List };

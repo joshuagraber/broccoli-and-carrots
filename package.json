@@ -2,9 +2,16 @@
   "name": "broccoli-and-carrots",
   "version": "0.0.0",
   "description": "Data structures and algorithms in TypeScript",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "type": "commonjs",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "types": "dist/esm/index.d.ts",
+  "type": "module",
   "license": "ISC",
   "author": "Joshua D. Graber <joshua.d.graber@gmail.com>",
   "repository": {
@@ -12,7 +19,8 @@
     "url": "https://github.com/joshuagraber/broccoli-and-carrots.git"
   },
   "scripts": {
-    "build": "tsc -p .",
+    "build": "npm run clean && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && npm run build:package-file",
+    "build:package-file": "node ./scripts/setPackageType.js",
     "clean": "rimraf dist",
     "commit": "npx git-cz",
     "lint": "eslint  --ignore-path .gitignore src --ext .ts .",
@@ -21,7 +29,7 @@
     "test": "jest --config jest.config.js --maxWorkers=1",
     "test:ci": "test --watchAll=false"
   },
-  "prepublish": "tsc",
+  "prepublish": "npm run build",
   "devDependencies": {
     "@types/jest": "^29.5.3",
     "@types/lodash": "^4.14.197",
@@ -43,5 +51,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "directory": "dist"
   }
 }
