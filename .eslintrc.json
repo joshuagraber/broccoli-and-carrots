@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["standard-with-typescript", "eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "project": "./tsconfig.eslint.json",
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": "off",
+    "@typescript-eslint/semi": "off",
+    "member-delimiter-style": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "prefer-function-type": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "generator-star-spacing": "off",
+    "no-eq-null": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "strict-boolean-expressions": "off",
+    "no-template-curly-in-string": "off",
+    "explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
+  }
+}
