@@ -49,7 +49,7 @@ class Stack<T> implements Iterable<T> {
    * @param {T} element value to add to stack
    * @return {boolean}
    */
-  push(element: T) {
+  push(element: T): boolean {
     return this.list.push(element);
   }
 
@@ -68,7 +68,7 @@ class Stack<T> implements Iterable<T> {
    * @param {T} element value to search for
    * @returns {boolean}
    */
-  contains(element: T) {
+  contains(element: T): boolean {
     return this.list.contains(element);
   }
 
