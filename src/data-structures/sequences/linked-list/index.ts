@@ -47,7 +47,7 @@ class LinkedList<T> implements Iterable<T> {
   }
 
   /**
-   * Appends values to list from array
+   * Appends values to list from array ~ O(k)
    */
   fromArray(arr: T[]): LinkedList<T> {
     for (const val of arr) {
@@ -71,7 +71,7 @@ class LinkedList<T> implements Iterable<T> {
   // INSERT
   /**
    * Adds node to the head  ~ O(1)
-   * @param {T} val - value to add to head of list
+   * @param {T} val value to add to head of list
    * @return {boolean}
    */
   unshift(val: T): boolean {
@@ -96,7 +96,7 @@ class LinkedList<T> implements Iterable<T> {
 
   /**
    * Adds node to the tail ~ O(1)
-   * @param {T} val - value to add to tail of list
+   * @param {T} val value to add to tail of list
    * @return {boolean}
    */
   push(val: T): boolean {
@@ -121,8 +121,8 @@ class LinkedList<T> implements Iterable<T> {
 
   /**
    * Adds a node at specified index ~ O(n)
-   * @param {number} i - index
-   * @param {T} val - value to add to list
+   * @param {number} i index
+   * @param {T} val value to add to list
    * @return {boolean}
    */
   addAt(i: number, val: T): boolean {
@@ -175,7 +175,7 @@ class LinkedList<T> implements Iterable<T> {
 
   /**
    * Gets the value of node at index i - O(n)
-   * @param {number} i - index of element
+   * @param {number} i index of element
    * @returns {T | null} value of element at index i if list is defined and i exists in list
    */
   get(i: number): T | null {
@@ -198,7 +198,7 @@ class LinkedList<T> implements Iterable<T> {
   // SEARCH
   /**
    * Returns the index of the first occurrence of the specified value in the linked list.
-   * @param {T} value - value to search for
+   * @param {T} value value to search for
    * @return {number} the index of the first occurrence of the element, and -1 if the element does not exist.
    */
   indexOf(value: T): number {
@@ -219,7 +219,7 @@ class LinkedList<T> implements Iterable<T> {
 
   /**
    * Checks if value is a node in linked list.
-   * @param {T} value - value to search for
+   * @param {T} value value to search for
    * @returns {boolean}
    */
   contains(value: T): boolean {
@@ -229,7 +229,7 @@ class LinkedList<T> implements Iterable<T> {
   // DELETE
   /**
    * Removes node at head ~ O(1)
-   * @return {T | null} - value of removed head node if list is defined
+   * @return {T | null} value of removed head node if list is defined
    */
   shift(): T | null {
     if (!this.list) return null;
@@ -254,7 +254,7 @@ class LinkedList<T> implements Iterable<T> {
 
   /**
    * Removes node at tail ~ O(1)
-   * @return {T | null} - value of removed head
+   * @return {T | null} value of removed head
    */
   pop(): T | null {
     if (!this.list) return null;
@@ -278,8 +278,8 @@ class LinkedList<T> implements Iterable<T> {
 
   /**
    * Removes node at specified index ~ O(n)
-   * @param {number} i - index to remove
-   * @return {T | null} - value of removed node
+   * @param {number} i index to remove
+   * @return {T | null} value of removed node
    */
   removeAt(i: number): T | null {
     if (!this.list) return null;
@@ -317,8 +317,8 @@ class LinkedList<T> implements Iterable<T> {
   /**
    * Removes first occurrence of node with specified value. Returns value of removed node if
    * removal was successful, and null otherwise. ~ O(n)
-   * @param {T} val - value to remove
-   * @returns {T | null} - value of removed node
+   * @param {T} val value to remove
+   * @returns {T | null} value of removed node
    */
   remove(val: T): T | null {
     const index = this.indexOf(val); // O(n)
