@@ -16,7 +16,7 @@ interface List<T> {
 class LinkedList<T> implements Iterable<T> {
   private list: List<T> | undefined;
 
-  private readonly equalsImpl: TypedEqualityFunction<T> = equals;
+  private equalsImpl: TypedEqualityFunction<T> = equals;
 
   /**
    * Creates a LinkedList ~ O(1)
@@ -35,7 +35,6 @@ class LinkedList<T> implements Iterable<T> {
    * Returns size ~ O(1)
    */
   size(): number {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     if (this.list) return this.list.size;
     return 0;
   }
@@ -52,7 +51,7 @@ class LinkedList<T> implements Iterable<T> {
    */
   fromArray(arr: T[]): LinkedList<T> {
     for (const val of arr) {
-      this.addBack(val);
+      this.push(val);
     }
     return this;
   }
@@ -75,7 +74,7 @@ class LinkedList<T> implements Iterable<T> {
    * @param {T} val - value to add to head of list
    * @return {boolean}
    */
-  addFront(val: T): boolean {
+  unshift(val: T): boolean {
     const newNode = new LinkedListNode(val);
 
     if (this.list) {
@@ -100,7 +99,7 @@ class LinkedList<T> implements Iterable<T> {
    * @param {T} val - value to add to tail of list
    * @return {boolean}
    */
-  addBack(val: T): boolean {
+  push(val: T): boolean {
     const newNode = new LinkedListNode(val);
 
     if (this.list) {
@@ -128,11 +127,11 @@ class LinkedList<T> implements Iterable<T> {
    */
   addAt(i: number, val: T): boolean {
     if (i === 0) {
-      return this.addFront(val);
+      return this.unshift(val);
     }
 
     if (i === this.size()) {
-      return this.addBack(val);
+      return this.push(val);
     }
 
     if (i < 0 || i >= this.size() || !this.list) return false;
@@ -232,7 +231,7 @@ class LinkedList<T> implements Iterable<T> {
    * Removes node at head ~ O(1)
    * @return {T | null} - value of removed head node if list is defined
    */
-  removeFront(): T | null {
+  shift(): T | null {
     if (!this.list) return null;
 
     // extract val of head so we can return it later
@@ -257,7 +256,7 @@ class LinkedList<T> implements Iterable<T> {
    * Removes node at tail ~ O(1)
    * @return {T | null} - value of removed head
    */
-  removeBack(): T | null {
+  pop(): T | null {
     if (!this.list) return null;
 
     // extract the val of tail so we can return it later
@@ -286,9 +285,9 @@ class LinkedList<T> implements Iterable<T> {
     if (!this.list) return null;
 
     if (i === 0) {
-      return this.removeFront();
+      return this.shift();
     } else if (i === this.size() - 1) {
-      return this.removeBack();
+      return this.pop();
     }
 
     if (i < 0 || i >= this.list.size) return null;

@@ -14,7 +14,7 @@ describe('Linked List - simple number', () => {
 
     list = new LinkedList(equals);
 
-    list.addFront(1);
+    list.unshift(1);
 
     expect(list.size()).toBe(1);
     expect(list.indexOf(1)).toBe(0);
@@ -28,8 +28,8 @@ describe('Linked List - simple number', () => {
     it('Accessing and removal methods return null on empty lists', () => {
       expect(list.peekFront()).toBe(null);
       expect(list.peekBack()).toBe(null);
-      expect(list.removeFront()).toBe(null);
-      expect(list.removeBack()).toBe(null);
+      expect(list.shift()).toBe(null);
+      expect(list.pop()).toBe(null);
       expect(list.remove(3)).toBe(null);
       expect(list.removeAt(3)).toBe(null);
       expect(list.removeAt(-1)).toBe(null);
@@ -39,21 +39,21 @@ describe('Linked List - simple number', () => {
 
   describe('Adding nodes', () => {
     it('adds node to head of list', () => {
-      list.addFront(8);
+      list.unshift(8);
       expect(list.size()).toBe(1);
       expect(list.indexOf(8)).toBe(0);
 
-      list.addFront(3);
+      list.unshift(3);
       expect(list.size()).toBe(2);
       expect(list.indexOf(3)).toBe(0);
     });
 
     it('adds to tail of list', () => {
-      list.addBack(8);
+      list.push(8);
       expect(list.size()).toBe(1);
       expect(list.indexOf(8)).toBe(0);
 
-      list.addBack(3);
+      list.push(3);
       expect(list.size()).toBe(2);
       expect(list.indexOf(3)).toBe(list.size() - 1);
     });
@@ -81,16 +81,16 @@ describe('Linked List - simple number', () => {
     });
 
     it('returns false when adding at index out of bounds', () => {
-      list.addFront(1);
+      list.unshift(1);
       expect(list.addAt(3, 2)).toBe(false);
     });
   });
 
   describe('Finding nodes', () => {
     it('gets nodes', () => {
-      list.addBack(1);
-      list.addBack(2);
-      list.addBack(3);
+      list.push(1);
+      list.push(2);
+      list.push(3);
 
       expect(list.get(0)).toBe(1);
       expect(list.get(1)).toBe(2);
@@ -100,9 +100,9 @@ describe('Linked List - simple number', () => {
     it('gets index of nodes', () => {
       expect(list.indexOf(1)).toBe(-1);
 
-      list.addBack(1);
-      list.addBack(2);
-      list.addBack(3);
+      list.push(1);
+      list.push(2);
+      list.push(3);
 
       expect(list.indexOf(1)).toBe(0);
       expect(list.indexOf(2)).toBe(1);
@@ -112,9 +112,9 @@ describe('Linked List - simple number', () => {
 
     it('finds out if list contains node', () => {
       expect(list.contains(1)).toBe(false);
-      list.addBack(1);
-      list.addBack(2);
-      list.addBack(3);
+      list.push(1);
+      list.push(2);
+      list.push(3);
 
       expect(list.contains(1)).toBe(true);
       expect(list.contains(3)).toBe(true);
@@ -122,54 +122,54 @@ describe('Linked List - simple number', () => {
     });
 
     it('peeks head', () => {
-      list.addFront(1);
+      list.unshift(1);
       expect(list.peekFront()).toBe(1);
 
-      list.addFront(2);
+      list.unshift(2);
       expect(list.peekFront()).toBe(2);
     });
 
     it('peeks tail', () => {
-      list.addBack(1);
+      list.push(1);
       expect(list.peekBack()).toBe(1);
 
-      list.addBack(2);
+      list.push(2);
       expect(list.peekBack()).toBe(2);
     });
   });
 
   describe('Removing nodes', () => {
     it('removes from head', () => {
-      list.addBack(8);
-      list.addBack(3);
+      list.push(8);
+      list.push(3);
 
-      list.removeFront();
+      list.shift();
       expect(list.size()).toBe(1);
       expect(list.peekFront()).toBe(3);
 
-      list.removeFront();
+      list.shift();
       expect(list.size()).toBe(0);
     });
 
     it('removes from tail', () => {
-      list.addBack(8);
-      list.addBack(3);
+      list.push(8);
+      list.push(3);
 
-      list.removeBack();
+      list.pop();
       expect(list.size()).toBe(1);
       expect(list.peekFront()).toBe(8);
 
-      list.removeBack();
+      list.pop();
       expect(list.size()).toBe(0);
     });
 
     it('removes at specific index', () => {
-      list.addBack(1);
-      list.addBack(2);
-      list.addBack(3);
-      list.addBack(4);
-      list.addBack(5);
-      list.addBack(6);
+      list.push(1);
+      list.push(2);
+      list.push(3);
+      list.push(4);
+      list.push(5);
+      list.push(6);
 
       const val = list.removeAt(0);
       expect(val).toBe(1);
@@ -197,9 +197,9 @@ describe('Linked List - simple number', () => {
     });
 
     it('returns null when attempting to remove out of bounds node', () => {
-      list.addBack(1);
-      list.addBack(2);
-      list.addBack(3);
+      list.push(1);
+      list.push(2);
+      list.push(3);
 
       const val1 = list.removeAt(4);
       expect(val1).toBe(null);
@@ -211,9 +211,9 @@ describe('Linked List - simple number', () => {
     });
 
     it('removes node with specific value', () => {
-      list.addBack(1);
-      list.addBack(2);
-      list.addBack(3);
+      list.push(1);
+      list.push(2);
+      list.push(3);
 
       const val1 = list.remove(1);
       expect(val1).toBe(1);
@@ -229,14 +229,14 @@ describe('Linked List - simple number', () => {
     });
 
     it('clears the list', () => {
-      list.addBack(1);
-      list.addBack(2);
-      list.addBack(3);
-      list.addBack(4);
+      list.push(1);
+      list.push(2);
+      list.push(3);
+      list.push(4);
       list.clear();
       expect(list.isEmpty()).toBe(true);
 
-      list.addFront(1);
+      list.unshift(1);
       list.clear();
       expect(list.isEmpty()).toBe(true);
 
@@ -300,9 +300,9 @@ describe('Linked list - complex object', () => {
 
     list = new LinkedList();
 
-    list.addBack(peugeot);
-    list.addBack(ferrari);
-    list.addBack(honda);
+    list.push(peugeot);
+    list.push(ferrari);
+    list.push(honda);
   });
 
   it('gets the index of a particular car', () => {
