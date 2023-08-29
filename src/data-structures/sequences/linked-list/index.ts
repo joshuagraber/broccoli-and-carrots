@@ -1,9 +1,9 @@
 // Imports
 // Imports - Sub-types
-import LinkedListNode from './linked-list-node';
+import LinkedListNode from './linked-list-node/index.js';
 
 // Imports - Utils
-import { equals, type TypedEqualityFunction } from '../../utils';
+import { equals, type TypedEqualityFunction } from '../../utils.js';
 
 // Types
 interface List<T> {
@@ -335,5 +335,4 @@ class LinkedList<T> implements Iterable<T> {
   }
 }
 
-// export default LinkedList;
 export { LinkedList, type List };

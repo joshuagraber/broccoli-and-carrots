@@ -1,22 +1,17 @@
-import packageFile from '../package.json' assert { type: 'json' };
-import fs from 'fs';
+const fs = require('fs');
 
-packageFile.type = 'commonjs';
-fs.writeFile('dist/cjs/package.json', JSON.stringify(packageFile), function writeJSON(err) {
+fs.writeFileSync('dist/cjs/package.json', JSON.stringify({ type: 'commonjs' }), function writeJSON(err) {
   if (err) {
     console.log(err);
     return;
   }
   console.log('writing to ' + 'dist/cjs/package.json:');
-  console.log(JSON.stringify(packageFile));
 });
 
-packageFile.type = 'module';
-fs.writeFile('dist/esm/package.json', JSON.stringify(packageFile), function writeJSON(err) {
+fs.writeFileSync('dist/esm/package.json', JSON.stringify({ type: 'module' }), function writeJSON(err) {
   if (err) {
     console.log(err);
     return;
   }
   console.log('writing to ' + 'dist/esm/package.json: ');
-  console.log(JSON.stringify(packageFile));
 });

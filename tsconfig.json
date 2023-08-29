@@ -1,8 +1,25 @@
 {
-  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "module": "esnext",
-    "outDir": "dist/esm",
-    "target": "esnext"
-  }
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "declaration": true,
+    "inlineSourceMap": false,
+    "lib": ["esnext"],
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "moduleResolution": "Node",
+    "noFallthroughCasesInSwitch": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "traceResolution": false,
+    "types": ["node", "jest"]
+  },
+  "compileOnSave": false,
+  "exclude": ["node_modules", "dist", "coverage"],
+  "include": ["src"]
 }

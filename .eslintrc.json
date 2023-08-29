@@ -18,6 +18,7 @@
     "@typescript-eslint/semi": "off",
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-var-requires": "off",
     "explicit-function-return-type": "off",
     "generator-star-spacing": "off",
     "member-delimiter-style": "off",

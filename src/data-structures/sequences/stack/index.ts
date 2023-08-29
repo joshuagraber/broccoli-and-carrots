@@ -1,5 +1,5 @@
-import { LinkedList } from '../linked-list';
-import { type TypedEqualityFunction } from '../../utils';
+import { LinkedList } from '../linked-list/index.js';
+import { type TypedEqualityFunction } from '../../utils.js';
 
 class Stack<T> implements Iterable<T> {
   private list: LinkedList<T>;

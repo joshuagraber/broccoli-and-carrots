@@ -1,6 +1,6 @@
 // Imports
 // Imports - packages
-import { isEqual as _isEqual } from 'lodash';
+import * as lodash from 'lodash';
 
 // eslint-disable-next-line no-unused-vars
 export type TypedEqualityFunction<T> = (a: T, b: T) => boolean;
@@ -13,7 +13,7 @@ export type CompareFunction<T> = (a: T, b: T) => number;
  * @function
  */
 export function equals<T>(a: T, b: T): boolean {
-  return _isEqual(a, b);
+  return lodash.isEqual(a, b);
 }
 
 /**

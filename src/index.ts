@@ -1,1 +1,1 @@
-export { LinkedList } from './data-structures';
+export * from './data-structures/index.js';

@@ -1,4 +1,6 @@
-import { LinkedList } from '../../../src/data-structures/sequences/linked-list';
+import { describe, it, expect } from '@jest/globals';
+
+import { LinkedList } from '../../../src/data-structures/sequences/linked-list/index.js';
 
 describe('Linked List - simple number', () => {
   let list: LinkedList<number>;

@@ -1,36 +1,46 @@
 {
   "name": "broccoli-and-carrots",
-  "version": "0.0.0",
+  "version": "0.0.0-semantic-release",
   "description": "Data structures and algorithms in TypeScript",
-  "main": "dist/cjs/index.js",
-  "module": "dist/mjs/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    }
+  "homepage": "https://github.com/joshuagraber/broccoli-and-carrots#readme",
+  "bugs": {
+    "url": "https://github.com/joshuagraber/broccoli-and-carrots/issues"
   },
-  "types": "dist/esm/index.d.ts",
-  "type": "module",
-  "license": "ISC",
+  "exports": {
+    "import": {
+      "types": "./dist/esm/index.d.ts",
+      "default": "./dist/esm/index.js"
+    },
+    "require": {
+      "types": "./dist/cjs/index.d.ts",
+      "default": "./dist/cjs/index.js"
+    },
+    "types": "./dist/esm/index.d.ts",
+    "default": "./dist/esm/index.js"
+  },
+  "main": "dist/cjs/index.js",
+  "license": "MIT",
   "author": "Joshua D. Graber <joshua.d.graber@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/joshuagraber/broccoli-and-carrots.git"
+    "url": "git+https://github.com/joshuagraber/broccoli-and-carrots.git"
   },
   "scripts": {
-    "build": "npm run clean && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && npm run build:package-file",
+    "build": "run-s clean:build && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && npm run build:package-file",
     "build:package-file": "node ./scripts/setPackageType.js",
-    "clean": "rimraf dist",
+    "clean": "run-p clean:*",
+    "clean:build": "rimraf dist",
+    "clean:test": "rimraf coverage",
     "commit": "npx git-cz",
     "lint": "eslint  --ignore-path .gitignore src --ext .ts .",
     "lint-and-fix": "eslint src --ext .ts --fix",
     "semantic-release": "semantic-release",
-    "test": "jest --config jest.config.js --maxWorkers=1",
+    "test": "run-s clean:test && jest --config jest.config.js --maxWorkers=1",
     "test:ci": "test --watchAll=false"
   },
   "prepublish": "npm run build",
   "devDependencies": {
+    "@jest/globals": "^29.6.4",
     "@types/jest": "^29.5.3",
     "@types/lodash": "^4.14.197",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
@@ -41,6 +51,7 @@
     "eslint-config-standard-with-typescript": "^38.0.0",
     "jest": "^29.6.3",
     "lodash": "^4.17.21",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.0.2",
     "rimraf": "^5.0.1",
     "semantic-release": "^21.0.9",
@@ -52,7 +63,12 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "publishConfig": {
-    "directory": "dist"
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
   }
 }

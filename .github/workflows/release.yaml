@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-  build:
+  lint-and-test:
     needs: setup
     runs-on: ubuntu-latest
     steps:
@@ -34,8 +34,6 @@ jobs:
           cache: 'npm'
 
       - run: npm ci
-      - name: Build app
-        run: npm run build
       - name: Lint TS
         run: npm run lint
       - name: Run tests
@@ -43,7 +41,7 @@ jobs:
 
   release:
     name: Release
-    needs: [setup, build]
+    needs: [setup, lint-and-test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -53,6 +51,8 @@ jobs:
           cache: 'npm'
 
       - run: npm ci
+      - name: Build lib
+        run: npm run build
       - name: Release
         run: npm run semantic-release
         env:
