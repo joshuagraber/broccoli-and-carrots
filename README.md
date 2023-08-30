@@ -8,25 +8,32 @@ _Note: this is primarily for my own learning. I'll aim to keep test coverage at 
 
 ## Data Structures
 
-| Structure                 | Type                              | Notes                                                        |
-| ------------------------- | --------------------------------- | ------------------------------------------------------------ |
-| [Linked List][LinkedList] | Sequence (linear, not contiguous) | This is a [Doubly Linked List][DoublyLinkedList]             |
-| [Stack][Stack]            | Sequence (linear, not contiguous) | Uses a `LinkedList` with the tail as the head of the `Stack` |
+| Structure                           | Type     | Notes                                                                    |
+| ----------------------------------- | -------- | ------------------------------------------------------------------------ |
+| [Linked List][LinkedList]           | Sequence | This is a [Doubly Linked List][DoublyLinkedListWiki]                     |
+| [Stack][Stack]                      | Sequence | Uses a `LinkedList` with the tail as the head of the [Stack][StackWiki]  |
+| [Queue][Queue]                      | Sequence | Uses a `LinkedList` with the head as the front of the [Queue][QueueWiki] |
+| [Deque (Double-ended Queue)][Deque] | Sequence | Uses a `LinkedList` with the head as the front of the [Deque][QueueWiki] |
 
 ## Algorithms
 
 ## References
 
 [Jeff Zhang - Iruka - DSA in Typescript](https://github.com/jeffzh4ng/iruka)  
-[William Fiset - Algorithms - DSA in Java](https://github.com/williamfiset/Algorithms)
+[William Fiset - Algorithms - DSA in Java](https://github.com/williamfiset/Algorithms)  
+[Algorithms - Jeff Erickson](https://jeffe.cs.illinois.edu/teaching/algorithms/)
 
 <!-- Link defs -->
 <!-- Structures -->
 
 [LinkedList]: ./src/data-structures/sequences/linked-list/index.ts
 [Stack]: ./src/data-structures/sequences/stack/index.ts
+[Queue]: ./src/data-structures/sequences/queues/queue/index.ts
+[Deque]: ./src/data-structures/sequences/queues/deque/index.ts
 
 <!-- Algorithms -->
 <!-- Resources -->
 
-[DoublyLinkedList]: https://en.wikipedia.org/wiki/Doubly_linked_list;
+[DoublyLinkedListWiki]: https://en.wikipedia.org/wiki/Doubly_linked_list;
+[StackWiki]: https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+[QueueWiki]: https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
