@@ -5,11 +5,7 @@ class Stack<T> implements Iterable<T> {
   private list: LinkedList<T>;
 
   constructor(equalsFunction?: TypedEqualityFunction<T>) {
-    if (typeof equalsFunction === 'function') {
-      this.list = new LinkedList(equalsFunction);
-    } else {
-      this.list = new LinkedList();
-    }
+    this.list = new LinkedList(equalsFunction);
   }
 
   //  HELPERS
@@ -29,6 +25,8 @@ class Stack<T> implements Iterable<T> {
 
   /**
    * Appends values to stack from array ~ O(k)
+   * @param {T[]} arr array of values from which to create the stack
+   * @returns {Queue<T>} Stack composed of values from the passed array
    */
   fromArray(arr: T[]): Stack<T> {
     this.list = this.list.fromArray(arr);

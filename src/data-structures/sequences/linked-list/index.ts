@@ -48,6 +48,8 @@ class LinkedList<T> implements Iterable<T> {
 
   /**
    * Appends values to list from array ~ O(k)
+   * @param {T[]} arr array of values from which to create the list
+   * @returns {LinkedList<T>} Linked List composed of values from the passed array
    */
   fromArray(arr: T[]): LinkedList<T> {
     for (const val of arr) {
