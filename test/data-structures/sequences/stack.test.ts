@@ -136,11 +136,11 @@ describe('Stack - complex object', () => {
   });
 
   it('checks if stack contains hero', () => {
-    const knight = new Car(123);
-    const mage = new Car(789);
+    const ferrari = new Car(123);
+    const peugeot = new Car(789);
 
-    expect(stack.contains(knight)).toBe(true);
-    expect(stack.contains(mage)).toBe(true);
+    expect(stack.contains(ferrari)).toBe(true);
+    expect(stack.contains(peugeot)).toBe(true);
     expect(stack.contains(new Car(246))).toBe(false);
   });
 });

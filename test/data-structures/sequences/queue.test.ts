@@ -140,11 +140,11 @@ describe('Queue - complex object', () => {
   });
 
   it('checks if queue contains hero', () => {
-    const knight = new Car(123);
-    const mage = new Car(789);
+    const ferrari = new Car(123);
+    const peugeot = new Car(789);
 
-    expect(queue.contains(knight)).toBe(true);
-    expect(queue.contains(mage)).toBe(true);
+    expect(queue.contains(ferrari)).toBe(true);
+    expect(queue.contains(peugeot)).toBe(true);
     expect(queue.contains(new Car(246))).toBe(false);
   });
 });
