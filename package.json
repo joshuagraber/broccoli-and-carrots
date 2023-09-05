@@ -26,8 +26,9 @@
     "url": "git+https://github.com/joshuagraber/broccoli-and-carrots.git"
   },
   "scripts": {
-    "build": "run-s clean:build && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && npm run build:package-file",
+    "build": "run-s clean:build && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && npm run build:package",
     "build:package-file": "node ./scripts/setPackageType.js",
+    "build:package": "sh ./bin/sh/set_package_type.sh",
     "clean": "run-p clean:*",
     "clean:build": "rimraf dist",
     "clean:test": "rimraf coverage",
