@@ -14,6 +14,7 @@ _Note: this is primarily for my own learning. I'll aim to keep test coverage at 
 | [Stack][Stack]                      | Sequence | Uses a `LinkedList` with the tail as the head of the [Stack][StackWiki]  |
 | [Queue][Queue]                      | Sequence | Uses a `LinkedList` with the head as the front of the [Queue][QueueWiki] |
 | [Deque (Double-ended Queue)][Deque] | Sequence | Uses a `LinkedList` with the head as the front of the [Deque][QueueWiki] |
+| [Circular Buffer][CircularBuffer]   | Sequence | Uses JS array as case of [Buffer][BufferWiki]                            |
 
 ## Algorithms
 
@@ -30,6 +31,7 @@ _Note: this is primarily for my own learning. I'll aim to keep test coverage at 
 [Stack]: ./src/data-structures/sequences/stack/index.ts
 [Queue]: ./src/data-structures/sequences/queues/queue/index.ts
 [Deque]: ./src/data-structures/sequences/queues/deque/index.ts
+[CircularBuffer]: ./src/data-structures/sequences/circular-buffer/index.ts
 
 <!-- Algorithms -->
 <!-- Resources -->
@@ -37,3 +39,4 @@ _Note: this is primarily for my own learning. I'll aim to keep test coverage at 
 [DoublyLinkedListWiki]: https://en.wikipedia.org/wiki/Doubly_linked_list;
 [StackWiki]: https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
 [QueueWiki]: https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+[BufferWiki]: https://en.wikipedia.org/wiki/Circular_buffer
