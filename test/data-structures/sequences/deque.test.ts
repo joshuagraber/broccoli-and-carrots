@@ -159,26 +159,26 @@ describe('Queue - complex object', () => {
     }
   }
 
-  let queue: Deque<Car>;
+  let deque: Deque<Car>;
 
   beforeAll(() => {
     const ferrari = new Car(123);
     const peugeot = new Car(456);
     const honda = new Car(789);
 
-    queue = new Deque();
+    deque = new Deque();
 
-    queue.push(ferrari);
-    queue.push(peugeot);
-    queue.push(honda);
+    deque.push(ferrari);
+    deque.push(peugeot);
+    deque.push(honda);
   });
 
   it('checks if queue contains hero', () => {
     const ferrari = new Car(123);
     const peugeot = new Car(789);
 
-    expect(queue.contains(ferrari)).toBe(true);
-    expect(queue.contains(peugeot)).toBe(true);
-    expect(queue.contains(new Car(246))).toBe(false);
+    expect(deque.contains(ferrari)).toBe(true);
+    expect(deque.contains(peugeot)).toBe(true);
+    expect(deque.contains(new Car(246))).toBe(false);
   });
 });
