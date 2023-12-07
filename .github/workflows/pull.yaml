@@ -31,7 +31,7 @@ jobs:
           node-version: '18.x'
           cache: 'npm'
       - run: npm ci
-      - name: Build app
+      - name: Build lib
         run: npm run build
 
   lint:
