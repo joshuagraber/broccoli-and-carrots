@@ -1,4 +1,4 @@
-import { CircularBuffer } from '../../../src/data-structures/sequences/circular-buffer/index.js';
+import { CircularBuffer } from './circular-buffer';
 
 describe('Circular Buffer', () => {
   let buffer: CircularBuffer<number>;
@@ -151,5 +151,22 @@ describe('Circular Buffer - complex object', () => {
     expect(buffer.contains(ferrari)).toBe(true);
     expect(buffer.contains(honda)).toBe(true);
     expect(buffer.contains(new Car(246))).toBe(false);
+  });
+});
+
+describe('Circular Buffer - custom equality func', () => {
+  const buffer = new CircularBuffer(4, (a, b) => a === b);
+  buffer.enqueue(0);
+  buffer.enqueue(1);
+  buffer.enqueue(2);
+  buffer.enqueue(3);
+
+  it('checks if queue contains elements', () => {
+    expect(buffer.contains(0)).toBe(true);
+    expect(buffer.contains(1)).toBe(true);
+    expect(buffer.contains(2)).toBe(true);
+    expect(buffer.contains(3)).toBe(true);
+    expect(buffer.size()).toBe(4);
+    expect(buffer.contains(5)).toBe(false);
   });
 });

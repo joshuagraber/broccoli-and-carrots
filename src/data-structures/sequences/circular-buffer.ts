@@ -1,5 +1,5 @@
 // Imports - util
-import { equals, type TypedEqualityFunction } from '../../utils.js';
+import { equals, type TypedEqualityFunction } from '../utils.js';
 
 class CircularBuffer<T> {
   private list: T[];

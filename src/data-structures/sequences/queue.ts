@@ -1,7 +1,7 @@
-import { LinkedList } from '../../linked-list/index.js';
-import { type TypedEqualityFunction } from '../../../../data-structures/utils.js';
+import { LinkedList } from './linked-list';
+import { type TypedEqualityFunction } from '../utils';
 
-class Deque<T> implements Iterable<T> {
+class Queue<T> implements Iterable<T> {
   private list: LinkedList<T>;
 
   constructor(equalsFunction?: TypedEqualityFunction<T>) {
@@ -28,7 +28,7 @@ class Deque<T> implements Iterable<T> {
    * @param {T[]} arr array of values from which to create the queue
    * @returns {Queue<T>} Queue composed of values from the passed array
    */
-  fromArray(arr: T[]): Deque<T> {
+  fromArray(arr: T[]): Queue<T> {
     this.list = this.list.fromArray(arr);
     return this;
   }
@@ -42,18 +42,10 @@ class Deque<T> implements Iterable<T> {
 
   // INSERT
   /**
-   * Pushes element into front of queue - O(1)
+   * Enqueues element into rear of queue - O(1)
    * @param {T} element - element to be enqueued
    */
-  unshift(element: T): void {
-    this.list.unshift(element);
-  }
-
-  /**
-   * Pushes element into back of queue - O(1)
-   * @param {T} element - element to be enqueued
-   */
-  push(element: T): void {
+  enqueue(element: T): void {
     this.list.push(element);
   }
 
@@ -88,29 +80,20 @@ class Deque<T> implements Iterable<T> {
 
   // DELETE
   /**
-   * Pops element from front of queue - O(1)
-   * @returns {T | null}
-   */
-  shift(): T | null {
-    if (this.isEmpty()) return null;
-    return this.list.shift();
-  }
-
-  /**
-   * Pops element from back queue - O(1)
-   * @returns {T | null}
-   */
-  pop(): T | null {
-    if (this.isEmpty()) return null;
-    return this.list.pop();
-  }
-
-  /**
-   * Deletes all elements in queue - O(1)
+   * Deletes all nodes ~ O(1)
    */
   clear(): void {
     this.list.clear();
   }
+
+  /**
+   * Dequeues element from queue - O(1)
+   * @returns {T}
+   */
+  dequeue(): T | null {
+    if (this.isEmpty()) return null;
+    return this.list.shift();
+  }
 }
 
-export { Deque };
+export { Queue };

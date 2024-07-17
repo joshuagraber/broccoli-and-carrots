@@ -1,9 +1,9 @@
 // Imports
 // Imports - Sub-types
-import LinkedListNode from './linked-list-node/index.js';
+import LinkedListNode from './linked-list-node';
 
 // Imports - Utils
-import { equals, type TypedEqualityFunction } from '../../utils.js';
+import { equals, type TypedEqualityFunction } from '../utils';
 
 // Types
 interface List<T> {

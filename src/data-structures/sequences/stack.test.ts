@@ -1,6 +1,6 @@
 import { describe, it, expect } from '@jest/globals';
 
-import { Stack } from '../../../src/data-structures/sequences/stack/index.js';
+import { Stack } from './stack';
 
 describe('Stack', () => {
   let stack: Stack<number>;

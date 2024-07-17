@@ -1,3 +1,4 @@
-export { LinkedList } from './sequences/linked-list/index.js';
-export { Stack } from './sequences/stack/index.js';
-export * from './sequences/queues/index.js';
+export { LinkedList } from './sequences/linked-list';
+export { Stack } from './sequences/stack';
+export { Queue } from './sequences/queue';
+export { Deque } from './sequences/deque';

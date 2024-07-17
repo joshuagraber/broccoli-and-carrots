@@ -1,1 +1,1 @@
-export * from './data-structures/index.js';
+export * from './data-structures';

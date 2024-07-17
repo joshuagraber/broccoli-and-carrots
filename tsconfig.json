@@ -17,7 +17,8 @@
     "sourceMap": true,
     "strict": true,
     "traceResolution": false,
-    "types": ["node", "jest"]
+    "types": ["node", "jest"],
+    "target": "ESNext"
   },
   "compileOnSave": false,
   "exclude": ["node_modules", "dist", "coverage"],

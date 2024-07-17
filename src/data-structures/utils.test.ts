@@ -1,4 +1,4 @@
-import { compare, equals } from '../../src/data-structures/utils.js';
+import { compare, equals } from './utils';
 
 describe('utils', () => {
   it('equals', () => {
