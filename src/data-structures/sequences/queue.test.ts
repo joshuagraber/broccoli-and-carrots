@@ -1,3 +1,4 @@
+import { Car } from '../test-utils';
 import { Queue } from './queue';
 
 describe('Queue', () => {
@@ -113,18 +114,6 @@ describe('Queue', () => {
 });
 
 describe('Queue - complex object', () => {
-  class Car {
-    id: number;
-    topSpeed: number;
-    engineSize: number;
-
-    constructor(id: number) {
-      this.id = id;
-      this.topSpeed = 100;
-      this.engineSize = 100;
-    }
-  }
-
   let queue: Queue<Car>;
 
   beforeAll(() => {
@@ -139,7 +128,7 @@ describe('Queue - complex object', () => {
     queue.enqueue(honda);
   });
 
-  it('checks if queue contains hero', () => {
+  it('checks if queue contains car', () => {
     const ferrari = new Car(123);
     const peugeot = new Car(789);
 

@@ -1,6 +1,6 @@
 // Imports
 // Imports - Sub-types
-import LinkedListNode from './linked-list-node';
+import LinkedListNode from './linked-list.node';
 
 // Imports - Utils
 import { equals, type TypedEqualityFunction } from '../utils';

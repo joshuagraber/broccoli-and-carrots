@@ -1,6 +1,7 @@
 import { describe, it, expect } from '@jest/globals';
 
 import { Stack } from './stack';
+import { Car } from '../test-utils';
 
 describe('Stack', () => {
   let stack: Stack<number>;
@@ -107,19 +108,7 @@ describe('Stack', () => {
 });
 
 describe('Stack - complex object', () => {
-  class Car {
-    carId: number;
-    topSpeed: number;
-    engineSize: number;
-
-    constructor(id: number) {
-      this.carId = id;
-      this.topSpeed = 100;
-      this.engineSize = 100;
-    }
-  }
-
-  const sameHeroF = (a: Car, b: Car) => a.carId === b.carId;
+  const sameCarF = (a: Car, b: Car) => a.id === b.id;
 
   let stack: Stack<Car>;
 
@@ -128,14 +117,14 @@ describe('Stack - complex object', () => {
     const peugeot = new Car(456);
     const honda = new Car(789);
 
-    stack = new Stack(sameHeroF);
+    stack = new Stack(sameCarF);
 
     stack.push(ferrari);
     stack.push(peugeot);
     stack.push(honda);
   });
 
-  it('checks if stack contains hero', () => {
+  it('checks if stack contains car', () => {
     const ferrari = new Car(123);
     const peugeot = new Car(789);
 

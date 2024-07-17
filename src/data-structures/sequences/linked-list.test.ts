@@ -1,6 +1,7 @@
 import { describe, it, expect } from '@jest/globals';
 
 import { LinkedList } from './linked-list';
+import { Car } from '../test-utils';
 
 describe('Linked List - simple number', () => {
   let list: LinkedList<number>;
@@ -281,18 +282,6 @@ describe('Linked List - simple number', () => {
 });
 
 describe('Linked list - complex object', () => {
-  class Car {
-    id: number;
-    topSpeed: number;
-    engineSize: number;
-
-    constructor(id: number) {
-      this.id = id;
-      this.topSpeed = 100;
-      this.engineSize = 100;
-    }
-  }
-
   let list: LinkedList<Car>;
 
   beforeAll(() => {
@@ -315,7 +304,7 @@ describe('Linked list - complex object', () => {
     expect(list.indexOf(peugeot)).toBe(2);
   });
 
-  it('checks if list contains hero', () => {
+  it('checks if list contains car', () => {
     const ferrari = new Car(123);
     const peugeot = new Car(789);
 

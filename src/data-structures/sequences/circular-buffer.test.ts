@@ -1,4 +1,5 @@
 import { CircularBuffer } from './circular-buffer';
+import { Car } from '../test-utils';
 
 describe('Circular Buffer', () => {
   let buffer: CircularBuffer<number>;
@@ -118,18 +119,6 @@ describe('Circular Buffer', () => {
 });
 
 describe('Circular Buffer - complex object', () => {
-  class Car {
-    id: number;
-    topSpeed: number;
-    engineSize: number;
-
-    constructor(id: number) {
-      this.id = id;
-      this.topSpeed = 100;
-      this.engineSize = 100;
-    }
-  }
-
   let buffer: CircularBuffer<Car>;
 
   beforeAll(() => {
