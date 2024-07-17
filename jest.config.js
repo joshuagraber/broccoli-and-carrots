@@ -1,9 +1,13 @@
 module.exports = {
-	roots: ['<rootDir>/test'],
-	testMatch: ['**/__test__/**/*.+(ts|tsx|js)', '**/?(*.)+(spec|test).+(ts|tsx|js)'],
-	transform: {
-		'^.+\\.(ts|tsx)$': 'ts-jest',
-	},
-	collectCoverage: true,
-	collectCoverageFrom: ['src/**/{!(b-tree),}.ts'],
+  roots: ['<rootDir>'],
+  testEnvironment: 'node',
+  preset: 'ts-jest',
+  testMatch: ['**/__test__/**/*.+(ts|js)', '**/?(*.)+(spec|test).+(ts|js)'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+  collectCoverage: true,
+  collectCoverageFrom: ['src/**/{!(index),}.ts'],
+  transform: {
+    '\\.[jt]s': 'ts-jest'
+  },
+  extensionsToTreatAsEsm: ['.ts']
 };
